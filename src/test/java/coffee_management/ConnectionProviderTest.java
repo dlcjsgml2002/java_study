@@ -1,4 +1,4 @@
-package java_study;
+package coffee_management;
 
 import static org.junit.Assert.*;
 
@@ -10,8 +10,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java_study.jdbc.ConnectionProvider;
-import java_study.jdbc.LogUtil;
+import coffee_management.jdbc.ConnectionProvider;
+import coffee_management.jdbc.LogUtil;
 
 public class ConnectionProviderTest {
 

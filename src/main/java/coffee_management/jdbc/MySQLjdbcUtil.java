@@ -1,4 +1,4 @@
-package java_study.jdbc;
+package coffee_management.jdbc;
 
 import java.io.IOException;
 import java.io.InputStream;

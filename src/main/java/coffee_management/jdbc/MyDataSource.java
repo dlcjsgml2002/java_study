@@ -1,4 +1,4 @@
-package java_study.jdbc;
+package coffee_management.jdbc;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,8 +34,8 @@ public class MyDataSource {
 
 	public MyDataSource() {
 		Properties prop = loadProperties();
-
 		DataSource ds_unpooled;
+
 		try {
 			ds_unpooled = DataSources.unpooledDataSource(prop.getProperty("url"), prop);
 			Map<String, Object> overrides = new HashMap<>();
@@ -49,11 +49,13 @@ public class MyDataSource {
 
 	private Properties loadProperties() {
 		Properties properties = new Properties();
+
 		try (InputStream is = ClassLoader.getSystemResourceAsStream("db.properties")) {
 			properties.load(is);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		return properties;
 	}
 }
