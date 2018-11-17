@@ -1,11 +1,10 @@
 package coffee_management.jdbc;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import com.mysql.jdbc.PreparedStatement;
 
 public class LogUtil {
 	static final Logger LOG = LogManager.getLogger();
