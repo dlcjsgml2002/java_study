@@ -1,0 +1,24 @@
+package java_study.jdbc;
+
+import java.sql.SQLException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.mysql.jdbc.PreparedStatement;
+
+public class LogUtil {
+	static final Logger LOG = LogManager.getLogger();
+
+	public static void prnLog(PreparedStatement pstmt) {
+		LOG.trace(pstmt.toString().substring(pstmt.toString().lastIndexOf(": ") + 2));
+	}
+
+	public static void prnLog(String message) {
+		LOG.trace(String.format("%s", message));
+	}
+
+	public static void prnLog(SQLException e) {
+		LOG.trace(String.format("errorCode %s errorMessage %s", e.getErrorCode(), e.getMessage()));
+	}
+}
