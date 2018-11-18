@@ -22,7 +22,7 @@ public class SaleDaoImpl implements SaleDao {
 		LogUtil.prnLog("SelectSaleByAll()");
 
 		List<Sale> list = new ArrayList<>();
-		String sql = "select no, code, price, saleCnt, marginRate from sale";
+		String sql = "select no, code, price, salecnt, marginrate from sale";
 
 		try (Connection conn = MySQLjdbcUtil.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -40,7 +40,7 @@ public class SaleDaoImpl implements SaleDao {
 		int no = rs.getInt("no");
 		Product code = new Product(rs.getString("code"));
 		int price = rs.getInt("price");
-		int saleCnt = rs.getInt("saleInt");
+		int saleCnt = rs.getInt("saleCnt");
 		int marginRate = rs.getInt("marginRate");
 
 		return new Sale(no, code, price, saleCnt, marginRate);

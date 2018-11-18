@@ -18,7 +18,7 @@ public class ProductDaoImpl implements ProductDao {
 		LogUtil.prnLog("selectProductByAll()");
 
 		List<Product> list = new ArrayList<>();
-		String sql = "select code, name, from product";
+		String sql = "select code, name from product";
 
 		try (Connection conn = MySQLjdbcUtil.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -28,7 +28,7 @@ public class ProductDaoImpl implements ProductDao {
 				list.add(getProduct(rs));
 			}
 		}
-		return null;
+		return list;
 	}
 
 	private Product getProduct(ResultSet rs) throws SQLException {
@@ -40,7 +40,7 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public Product selectProductByCode(Product pdt) throws SQLException {
-		String sql = "select code, name, from product where code = ?";
+		String sql = "select code, name from product where code = ?";
 		Product product = null;
 		try (Connection conn = ConnectionProvider.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);) {
@@ -55,7 +55,7 @@ public class ProductDaoImpl implements ProductDao {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		return null;
+		return product;
 	}
 
 }
